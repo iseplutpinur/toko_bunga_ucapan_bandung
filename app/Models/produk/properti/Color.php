@@ -1,16 +1,22 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\produk\properti;
 
+use App\Models\Produk;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Color extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'title',
+        'slug',
         'description'
     ];
+
+    public function produk()
+    {
+        return $this->hasMany(Produk::class);
+    }
 }

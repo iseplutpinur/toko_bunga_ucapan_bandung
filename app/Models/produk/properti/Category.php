@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\produk\properti;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Mahasiswa;
 
-class Jurusan extends Model
+class Category extends Model
 {
     use HasFactory;
     protected $fillable = [
         'title',
+        'slug',
         'description'
     ];
-    public function mahasiswa()
+
+    public function produk()
     {
-        return $this->hasMany(Mahasiswa::class);
+        return $this->hasMany(Produk::class);
     }
 }
